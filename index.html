@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麒麟舞 - 中国传统民间舞蹈艺术</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <audio id="bgMusic" src="sounds/高山流水.mp3" type="audio/mp3" loop></audio>
+
+    <div class="audio-control" onclick="toggleMusic()">
+        <span id="musicStatus">播放音乐</span>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>麒麟舞 - 中国传统民间舞蹈艺术</h1>
+        </header> 
+        
+        <nav>
+            <ul>
+                <li class="has-submenu">
+                    <a onclick="toggleSubmenu('intro-submenu')">简介</a>
+                    <ul id="intro-submenu" class="submenu">
+                        <li><a onclick="showContent('what-is')">什么是麒麟舞</a></li>
+                        <li><a onclick="showContent('history')">历史渊源</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a onclick="toggleSubmenu('services-submenu')">特色服务</a>
+                    <ul id="services-submenu" class="submenu">
+                        <li><a href="https://www.coze.cn/s/iSPQWhcW/" target="_blank" onclick="hideSubmenus()">和杜甫聊天</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a onclick="toggleSubmenu('social-submenu')">社交媒体</a>
+                    <ul id="social-submenu" class="submenu">
+                        <li><a onclick="showContent('weibo')">抖音</a></li>
+                        <li><a onclick="showContent('wechat')">微信公众号</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section id="intro" class="content-section">
+                <h2>简介</h2>
+                <p>麒麟舞是中国传统民间舞蹈艺术的瑰宝，以其独特的造型和丰富的文化内涵闻名。</p>
+            </section>
+            
+            <section id="what-is" class="content-section">
+                <h2>什么是麒麟舞</h2>
+                <p>麒麟舞是一种模仿麒麟动作的传统舞蹈，通常在节庆活动中表演。麒麟是中国神话中的祥瑞之兽，象征着吉祥、和平与繁荣。</p>
+            </section>
+            
+            <section id="history" class="content-section">
+                <h2>历史渊源</h2>
+                <p>麒麟舞的起源可以追溯到汉代，经过漫长的历史演变，形成了今天我们所见到的形式。它融合了舞蹈、杂技和民间传说等多种元素。</p>
+            </section>
+            
+            <section id="services" class="content-section">
+                <h2>特色服务</h2>
+                <p>我们提供多种与麒麟舞相关的特色服务，包括与拟杜甫的互动体验。</p>
+            </section>
+            
+            <section id="social" class="content-section">
+                <h2>社交媒体</h2>
+                <p>关注我们的社交媒体账号，了解更多麒麟舞相关资讯。</p>
+            </section>
+            
+            <section id="weibo" class="content-section">
+                <h2>抖音</h2>
+                <p>关注我们的抖音xxxxx，获取最新的麒麟舞表演信息和文化解读。</p>
+            </section>
+            
+            <section id="wechat" class="content-section">
+                <h2>微信公众号</h2>
+                <p>订阅我们的微信公众号xxxxx，深入了解麒麟舞的历史、技艺和文化内涵。</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 麒麟舞文化传承网站。保留所有权利。</p>
+        </footer>
+    </div>
+
+    <script type="text/JavaScript" src="./scripts/index.js"></script>
+</body>
+
+</html>
