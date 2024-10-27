@@ -215,6 +215,7 @@
 
 .Merchandise .Contacts .Contact {
     padding: 2.5rem;
+    border-radius: 15px;
     margin-left: 5rem;
     margin-right: 5rem;
 
