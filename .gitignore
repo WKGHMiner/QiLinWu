@@ -1,5 +1,1 @@
 *.ts
-
-/node_modules
-
-*.json
