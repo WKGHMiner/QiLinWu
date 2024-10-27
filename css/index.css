@@ -1,302 +1,153 @@
-@keyframes backgroundMove {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-
-body {
-    font-family: 'STKaiti', 'KaiTi', '楷体', serif;
-    line-height: 1.6;
-    color: #333;
-    background: url('../img/background.jpg') no-repeat center center fixed;
-    background-size: 120% 120%;
-    animation: backgroundMove 60s ease infinite alternate;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 253, 240, 0.85);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-h1, h2 {
-    color: #2F4F4F;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 2.5em;
-    text-align: center;
-    border-bottom: 2px solid #2F4F4F;
-    padding-bottom: 10px;
-}
-
-nav > ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin: 20px 0;
-    background-color: #2c3e50;
-    border-radius: 0; /* 移除圆角 */
-    overflow: visible;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-nav > ul > li {
-    list-style-type: none;
-    flex: 1;
-    position: relative;
-    margin: 0;
-    border-right: 1px solid rgba(255, 255, 255, 0.1); /* 更柔和的边框颜色 */
-}
-
-nav > ul > li:last-child {
-    border-right: none;
-}
-
-nav > ul > li > a {
+button {
     cursor: pointer;
-    padding: 15px 20px;
-    background-color: #2c3e50;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: block;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav > ul > li > a:hover {
-    background-color: #34495e; /* 保留悬停效果 */
-}
-
-.has-submenu > a {
-    border-bottom: 3px solid transparent;
-}
-
-.has-submenu:hover > a {
-    background-color: #2c3e50;
-    border-bottom-color: #e74c3c;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 5px);
-    left: 0;
-    background-color: #34495e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 100%;
-    z-index: 1000;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-.has-submenu:hover .submenu {
-    display: block;
-}
-
-.submenu li {
-    margin: 0;
-    padding: 0;
-}
-
-.submenu a {
-    padding: 12px 20px;
-    font-size: 14px;
-    text-align: center;
-    background-color: transparent;
-    color: #ecf0f1;
-    display: block;
-    text-decoration: none;
-}
-
-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #2F4F4F;
-}
-
-.audio-control {
+/* 顶部横幅样式 */
+.Banner {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(47, 79, 79, 0.7);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 10;
+}
+
+/* 顶部横幅中的无序列表样式 */
+.Banner ul {
+    width: 100%;
+    height: 20%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255,255,255,0.85);
+    list-style-type: none;
+}
+
+/* 列表左部元素样式 */
+.Banner li.left {
+    width: 20%;
+    height: 90%;
+    display: flex;
+}
+
+/* 左部按钮样式 */
+.Banner button.left_button {
+    font-family: system-ui;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0px;
+    background-color: rgba(255,255,255,0);
+    color: rgba(220,38,38,1.0);
+}
+
+/* 列表右部元素样式 */
+.Banner li.right {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 右部按钮样式 */
+.Banner button.right_button {
+    font-family: system-ui;
+    font-size: 16px;
+    border: 0px;
+    background-color: rgba(255,255,255,0);
+    color: black;
+    transition: color 0.3s;
+}
+
+/* 使右部按钮变色 */
+.Banner button.right_button:hover {
+    color: rgb(235, 51, 51);
+}
+
+/* 欢迎Section样式 */
+.Header {
+    height: 100vh;
+    background-image: url("../img/background.avif");
+    background-size: auto 250%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* 为欢迎Section添加Layer叠层样式 */
+.Header .Layer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1));
+    z-index: 1;
+}
+
+/* 欢迎Section的标题样式 */
+.Header .Title {
+    font-size: 3.75rem;
+    font-weight: bold;
+    font-family: system-ui;
     padding: 10px;
-    border-radius: 5px;
-    color: #F0F0F0;
-    cursor: pointer;
+    background: linear-gradient(to right, rgba(185,28,28,1.0), rgba(234,88,12,1.0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: 2;
 }
 
-.content-section {
-    display: none;
+/* 欢迎Section的副标题样式 */
+.Header p {
+    font-size: 1.5rem;
+    font-weight: 350;
+    font-family: system-ui;
+    padding: 5px;
+    padding-bottom: 1rem;
+    z-index: 2;
 }
 
-.active {
-    display: block;
+/* 欢迎Section的按钮通用样式 */
+.Header button {
+    height: 3.25rem;
+    width: 8rem;
+    border-radius: 100px;
+    border: 2px solid rgb(220, 38, 38);
+    margin: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
+    z-index: 2;
 }
 
-nav ul li {
-    position: relative;
+/* "开始体验"按钮的样式 */
+.Header .Start {
+    color: white;
+    background-color: rgb(220, 38, 38);
 }
 
-.submenu {
-    display: none;
-    position: absolute;
-    top: calc(100% - 1px);
-    left: 0;
-    background-color: #3D6F6F;
-    padding: 15px;
-    border-radius: 0 0 5px 5px;
-    width: 100%;
-    z-index: 999;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.Header .Start:hover {
+    border-color: rgb(174, 31, 31);
+    background-color: rgb(174, 31, 31);
+    transform: scale(1.05);
 }
 
-.has-submenu:hover .submenu {
-    display: block;
+/* "了解更多"按钮的样式 */
+.Header .More {
+    background-color: white;
 }
 
-.submenu li {
-    margin: 10px 0;
+.Header .More:hover {
+    background-color: rgb(255, 203, 203);
+    transform: scale(1.05);
 }
 
-.submenu a {
-    white-space: nowrap;
-    padding: 15px 25px;
-    font-size: 18px;
-    display: block;
-    text-align: left;
-    background-color: transparent;
-    border-radius: 0;
-}
-
-.has-submenu {
-    position: relative;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: calc(100% - 1px);
-    left: 0;
-    background-color: #3D6F6F;
-    padding: 15px;
-    border-radius: 0 0 5px 5px;
-    width: 100%;
-    z-index: 999;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.has-submenu:hover .submenu {
-    display: block;
-}
-
-.submenu li {
-    margin: 10px 0;
-}
-
-.submenu a {
-    white-space: nowrap;
-    padding: 15px 25px;
-    font-size: 18px;
-    display: block;
-    text-align: left;
-    background-color: transparent;
-    border-radius: 0;
-}
-
-.submenu a:hover {
-    background-color: #2F4F4F;
-}
-
-.has-submenu > a {
-    border-bottom: 2px solid #2F4F4F; /* 添加底部边框 */
-}
-
-.has-submenu:hover > a {
-    background-color: #3D6F6F;
-    border-bottom-color: #3D6F6F; /* 悬停时改变底部边框颜色 */
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0; /* 确保子菜单宽度与主按钮相同 */
-    background-color: #3D6F6F;
-    padding: 15px 0; /* 移除水平内边距 */
-    border-radius: 0 0 5px 5px;
-    z-index: 999;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: -2px;
-}
-
-.has-submenu:hover .submenu {
-    display: block;
-}
-
-.submenu li {
-    margin: 0; /* 移除垂直边距 */
-}
-
-.submenu a {
-    white-space: nowrap;
-    padding: 15px 30px; /* 调整内边距以匹配主按钮 */
-    font-size: 18px;
-    display: block;
-    text-align: center; /* 使子菜单项居中对齐 */
-    background-color: transparent;
-    border-radius: 0;
-}
-
-.submenu a:hover {
-    background-color: #2F4F4F;
-}
-
-.submenu li {
-    border-top: 1px solid #2c3e50; /* 为子菜单项添加顶部边框 */
-}
-
-.submenu li:first-child {
-    border-top: none; /* 移除第一个子菜单项的顶部边框 */
-}
-
-/* 添加个伪元素来填充主按钮和子菜单之间的间隙 */
-.has-submenu > a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; /* 与子菜单的top值相对应 */
-    left: 0;
-    right: 0;
-    height: 5px;
-    background-color: #34495e; /* 与子菜单背景色相同 */
-    display: none;
-}
-
-.has-submenu:hover > a::after {
-    display: block;
+.Main {
+    background-color: whitesmoke;
 }
